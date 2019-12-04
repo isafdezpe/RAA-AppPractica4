@@ -46,6 +46,13 @@ public class DanceMoves : MonoBehaviour
         Reproducir();
     }
 
+    public void Parar()
+    {
+        _animator.SetTrigger("stop");
+        _audioSource.Stop();
+        _audioSource.clip = null;
+    }
+
     private void Reproducir()
     {
         /*if (_targetStatus == TrackableBehaviour.Status.DETECTED ||

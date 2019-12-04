@@ -24,6 +24,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     protected TrackableBehaviour.Status m_NewStatus;
 
     private AudioSource _audioSource;
+    private Animator _animator;
 
     #endregion // PROTECTED_MEMBER_VARIABLES
 
@@ -32,6 +33,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     protected virtual void Start()
     {
         _audioSource = GetComponent<AudioSource>();
+        _animator = GetComponent<GameObject>().GetComponent<Animator>();
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
@@ -113,6 +115,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     protected virtual void OnTrackingLost()
     {
         _audioSource.Stop();
+        _animator.SetTrigger("stop");
         if (mTrackableBehaviour)
         {
             var rendererComponents = mTrackableBehaviour.GetComponentsInChildren<Renderer>(true);
