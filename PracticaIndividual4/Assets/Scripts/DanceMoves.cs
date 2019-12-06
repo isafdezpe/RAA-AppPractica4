@@ -22,7 +22,7 @@ public class DanceMoves : MonoBehaviour
     {
         _animator = Senku.GetComponent<Animator>();
         _audioSource = Target.GetComponent<AudioSource>();
-        _targetStatus = Target.GetComponent<DefaultTrackableEventHandler>().GetComponent<TrackableBehaviour>().CurrentStatus;
+        //_targetStatus = Target.GetComponent<DefaultTrackableEventHandler>().GetComponent<TrackableBehaviour>().CurrentStatus;
     }
 
     public void BreakDance()
