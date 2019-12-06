@@ -10,7 +10,7 @@ public class DanceMoves : MonoBehaviour
 
     private Animator _animator;
     private AudioSource _audioSource;
-    private TrackableBehaviour.Status _targetStatus;
+    //private TrackableBehaviour.Status _targetStatus;
 
     public AudioClip BreakDanceClip;
     public AudioClip HipHopClip;
@@ -22,7 +22,7 @@ public class DanceMoves : MonoBehaviour
     {
         _animator = Senku.GetComponent<Animator>();
         _audioSource = Target.GetComponent<AudioSource>();
-        _targetStatus = Target.GetComponent<DefaultTrackableEventHandler>().GetComponent<TrackableBehaviour>().CurrentStatus;
+        //_targetStatus = Target.GetComponent<DefaultTrackableEventHandler>().GetComponent<TrackableBehaviour>().CurrentStatus;
     }
 
     public void BreakDance()
@@ -46,16 +46,19 @@ public class DanceMoves : MonoBehaviour
         Reproducir();
     }
 
+<<<<<<< HEAD
     public void Parar()
     {
         _animator.SetTrigger("stop");
         _audioSource.Stop();
         _audioSource.clip = null;
     }
+=======
+>>>>>>> prueba
 
     private void Reproducir()
     {
-        /*if (_targetStatus == TrackableBehaviour.Status.DETECTED ||
+        /*if (_targetStatus != TrackableBehaviour.Status.DETECTED ||
             _targetStatus == TrackableBehaviour.Status.TRACKED ||
             _targetStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)*/
             _audioSource.Play();
