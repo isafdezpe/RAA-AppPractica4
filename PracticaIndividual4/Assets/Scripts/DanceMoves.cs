@@ -46,15 +46,6 @@ public class DanceMoves : MonoBehaviour
         Reproducir();
     }
 
-<<<<<<< HEAD
-    public void Parar()
-    {
-        _animator.SetTrigger("stop");
-        _audioSource.Stop();
-        _audioSource.clip = null;
-    }
-=======
->>>>>>> prueba
 
     private void Reproducir()
     {
