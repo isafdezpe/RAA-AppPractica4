@@ -10,7 +10,7 @@ public class DanceMoves : MonoBehaviour
 
     private Animator _animator;
     private AudioSource _audioSource;
-    private TrackableBehaviour.Status _targetStatus;
+    //private TrackableBehaviour.Status _targetStatus;
 
     public AudioClip BreakDanceClip;
     public AudioClip HipHopClip;
@@ -46,15 +46,10 @@ public class DanceMoves : MonoBehaviour
         Reproducir();
     }
 
-    public void Parar()
-    {
-        _animator.SetTrigger("stop");
-        _audioSource.Stop();
-    }
 
     private void Reproducir()
     {
-        /*if (_targetStatus == TrackableBehaviour.Status.DETECTED ||
+        /*if (_targetStatus != TrackableBehaviour.Status.DETECTED ||
             _targetStatus == TrackableBehaviour.Status.TRACKED ||
             _targetStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)*/
             _audioSource.Play();
